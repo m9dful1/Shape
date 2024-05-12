@@ -8,79 +8,79 @@ abstract class Shape {
 
 // Class Sphere that extends Shape
 class Sphere extends Shape {
-    private double radius;
+    private double radius; // Radius of the sphere
 
     public Sphere(double radius) {
-        this.radius = radius;
+        this.radius = radius; // Initialize radius
     }
 
     @Override
     double surfaceArea() {
         return 4 * Math.PI * radius * radius;
-    }
+    } // Calculate surface area
 
     @Override
     double volume() {
         return (4.0 / 3) * Math.PI * radius * radius * radius;
-    }
+    } // Calculate volume
 
     @Override
     public String toString() {
         return "Sphere with radius " + radius + ": Surface area = " + surfaceArea() + ", Volume = " + volume();
-    }
+    } // Return sphere data
 }
 
 // Class Cylinder that extends Shape
 class Cylinder extends Shape {
-    private double radius;
-    private double height;
+    private double radius; // Radius of the cylinder
+    private double height; // Height of the cylinder
 
     public Cylinder(double radius, double height) {
-        this.radius = radius;
-        this.height = height;
+        this.radius = radius; // Initialize radius
+        this.height = height; // Initialize height
     }
 
     @Override
     double surfaceArea() {
-        return 2 * Math.PI * radius * (radius + height);
+        return 2 * Math.PI * radius * (radius + height); // Calculate surface area
     }
 
     @Override
     double volume() {
-        return Math.PI * radius * radius * height;
+        return Math.PI * radius * radius * height; // Calculate volume
     }
 
     @Override
     public String toString() {
         return "Cylinder with radius " + radius + " and height " + height + ": Surface area = " + surfaceArea() + ", Volume = " + volume();
-    }
+    } // Return cylinder data
 }
 
 // Class Cone that extends Shape
 class Cone extends Shape {
-    private double radius;
-    private double height;
+    private double radius; // Radius of the cone
+    private double height; // Height of the cone
 
-    public Cone(double radius, double height) {
-        this.radius = radius;
-        this.height = height;
-    }
+    public Cone(double radius, double height) { 
+        this.radius = radius; // Initialize radius
+        this.height = height; // Initialize height
+    } 
 
     @Override
     double surfaceArea() {
         double slantHeight = Math.sqrt(radius * radius + height * height);
         return Math.PI * radius * (radius + slantHeight);
-    }
+    } // Calculate surface area
 
     @Override
     double volume() {
         return (Math.PI * radius * radius * height) / 3;
-    }
+    } // Calculate volume
 
     @Override
     public String toString() {
         return "Cone with radius " + radius + " and height " + height + ": Surface area = " + surfaceArea() + ", Volume = " + volume();
-    }
+    } // Return cone data
 }
 
 // Driver class ShapeArray
@@ -94,6 +94,6 @@ class ShapeArray {
         // Loop through the array and print each object's data using toString method
         for (Shape shape : shapeArray) {
             System.out.println(shape.toString());
-        }
+        } 
     }
 }
